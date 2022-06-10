@@ -11,7 +11,7 @@ const PageLayout:React.FC<{children:ReactNode}> = (props) => {
 				<meta name="description" content="Login page for Specs 0-0"/>
 				<meta name="author" content="Wickus Van der Merwe"/>
 			</Head>
-			<main>{children}</main>
+			<main className="w-full h-full">{children}</main>
         </>
     );
 };
