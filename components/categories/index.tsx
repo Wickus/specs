@@ -13,7 +13,7 @@ const Categories = () => {
 				}));
 			});
 		}
-	},[]);
+	},[genres.length]);
 
 	return <div>
 		{genres.map((genre, index)=>{

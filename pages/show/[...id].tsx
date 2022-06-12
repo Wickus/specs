@@ -26,7 +26,7 @@ const Show: React.FC<{id:string,season:string}> = (props) => {
                     console.log("error");
                 });
         }
-    }, []);
+    }, [id, showState]);
 
     return (
         <>
@@ -57,7 +57,7 @@ const Show: React.FC<{id:string,season:string}> = (props) => {
                             <p>Seasons:</p>
                             <ul className="flex items-center justify-start mt-2">
 								{showState?.tvSeriesInfo?.seasons.map((item,index)=>{
-									return <li role={"button"} onClick={()=>{
+									return <li role={"button"} key={index} onClick={()=>{
 										router.push(`/show/${id}/${item}`)
 									}} className={`${seasonItem} ${parseInt(season) === index + 1 ? "bg-white":"bg-gray-500"}`}>{item}</li>
 								})}
@@ -65,9 +65,9 @@ const Show: React.FC<{id:string,season:string}> = (props) => {
                         </div>
                         <div>
                             <ul className="flex items-center justify-start">
-                                {showState?.episodes.slice(0,3).map(({title,image}) => {
+                                {showState?.episodes.slice(0,3).map(({title,image},index) => {
                                     return (
-                                        <li className={episodeItem} style={{background:`url(${image})`}}>
+                                        <li className={episodeItem} key={index} style={{background:`url(${image})`}}>
                                             <p>{title}</p>
                                         </li>
                                     );

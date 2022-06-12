@@ -18,7 +18,7 @@ const Movie: React.FC<{id:string}> = (props) => {
 				console.log("error")
 			})
 		}		
-	},[])
+	},[id, movieState])
 
     return (
         <>

@@ -18,9 +18,7 @@ const Home: NextPage<{ id: number }> = (props) => {
                 setUser(data);
             });
         }
-    }, []);
-
-    console.log(user);
+    }, [id, user]);
 
     return (
         <div className="bg-gradient-to-r from-gray-900 bg-gray-800 w-full h-full max-h-full overflow-y-auto">
