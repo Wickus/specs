@@ -5,21 +5,16 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
     const prisma = new PrismaClient();
-    const { body } = req;
+    const { body: data } = req;
 
     if (req.method === "POST") {
-        const user = await prisma.users.findFirst({
-            where: {
-                email: body.email,
-                password: body.password,
-            },
-        });
+        const user = await prisma.users.create({ data });
 
         if (user) {
             res.setHeader("set-cookie", setCookie("id", user.userId.toString(), 1));
-            res.status(200).json({ name: "John Doe", success: true });
+            res.status(200).json({ error: false, ...user });
         } else {
-            res.status(200).json({ error: "Invalid", message: "Invalid username and password" });
+            res.status(200).json({ error: true, message: "Invalid username and password" });
         }
     } else {
         res.status(405);
