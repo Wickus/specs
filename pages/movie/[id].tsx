@@ -26,7 +26,7 @@ const Movie: React.FC<{id:string}> = (props) => {
                 <title>{movieState?.title}</title>
             </Head>
             <main className="h-full w-full">
-                <div className="flex items-end justify-start w-full h-full w-full bg-cover bg-center" style={{backgroundImage:`url(${movieState?.image})`}}>
+                <div className="flex items-end justify-start h-full w-full bg-cover bg-center" style={{backgroundImage:`url(${movieState?.image})`}}>
                     <div className="p-10 [background-image:linear-gradient(0deg,black_30%,transparent_70%)] w-full">
                         <h1 className={movieTitle}>{movieState?.title}</h1>
                         <ul className="mt-5 text-white">
