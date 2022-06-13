@@ -34,7 +34,7 @@ const Home: NextPage<{ id: number }> = (props) => {
                 Logout
             </button>
             <ActionBar />
-            <Categories />
+            <Categories uid={id.toString()} />
         </div>
     );
 };

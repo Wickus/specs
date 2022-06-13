@@ -5,8 +5,10 @@ export interface IShowResponse extends IMedia {
 	plot:string;
 	stars:string[];
 	genres:string[];
-	episodes:IMedia[];
+	episodes:any[];
 	tvSeriesInfo:{
 		seasons:string[];
-	}
+	};
+	watchList?:boolean;
+	continueWatching:boolean
 }
