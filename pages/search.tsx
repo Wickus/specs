@@ -20,7 +20,6 @@ const Search = () => {
         event.preventDefault();
         axios.get(`/api/search?search=${searchState.search}`).then(({ data }) => {
             setSearch({ ...searchState, response: data });
-			console.log(data)
         });
     };
 

@@ -85,7 +85,6 @@ const Show: React.FC<{ id: string; season: string; uid: number }> = (props) => {
                 });
         });
     };
-
     return (
         <>
             <Head>
