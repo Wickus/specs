@@ -12,7 +12,7 @@ const Category: React.FC<{ title: string; data: IMedia[] }> = ({title, data}) =>
                 {data.map((media, index) => {
                     return (
                         <li key={index} role="button" onClick={()=>{
-							router.push(`/show/${media.id}`)
+							router.push(`/show/${media.id ?? media.mediaId}`)
 						}} className="w-[200px] min-h-[360px] flex flex-col items-start justify-start mr-10">
                             <button>Watched</button>
                             <div className={"w-full min-h-[250px] bg-gray-500 bg-cover bg-center"} style={{backgroundImage:`url('${media.image}')`}}/>

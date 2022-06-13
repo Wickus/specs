@@ -29,6 +29,7 @@ model WatchedMedia {
 	watchedId Int @id @default(autoincrement())
 	userId Int @db.Int
 	mediaId String @db.VarChar(25)
+	episodeId String @db.VarChar(25)
 	title String @db.VarChar(255)
 	image String @db.VarChar(512)
 }
