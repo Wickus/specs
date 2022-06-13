@@ -25,17 +25,17 @@ const Search = () => {
 
     return (
         <PageLayout>
-            <div>
-                <div>
+            <div className="bg-gradient-to-r from-gray-900 bg-gray-800 w-full h-full max-h-full overflow-y-auto">
+                <div className="flex items-center justify-center max-w-[600px] h-[50px] bg-sky-900/20 mx-auto shadow-lg shadow-gray-900/20 sticky top-0">
                     <form onSubmit={onSubmit}>
-                        <input type="text" name="search" onInput={onInput} value={searchState.search} placeholder="Enter Movie / Series title" />
-                        <button type="submit">Search</button>
+                        <input type="text" className="bg-transparent text-white mr-5" name="search" onInput={onInput} value={searchState.search} placeholder="Enter Movie / Series title" />
+                        <button className="bg-white p-2 rounded-full" type="submit">Search</button>
                     </form>
                 </div>
 
                 <div>
 					<ul className="flex items-center justify-start mt-10">
-						{searchState.response.map(({id,image,title}, index) => {
+						{searchState?.response?.map(({id,image,title}, index) => {
 							return (
 								<li key={index} role="button" onClick={()=>{
 									router.push(`/show/${id}`)
