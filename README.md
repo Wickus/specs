@@ -12,7 +12,7 @@
 
 Run the following command to install all packages needed
 ```
-run npm i && npx prisma generate
+run npm i && npx prisma generate && npx prisma db pull
 ```
 
 Run the following command for the build version of the site
